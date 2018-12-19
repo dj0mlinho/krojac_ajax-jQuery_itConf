@@ -16,6 +16,10 @@
 //   .always(function () {
 //     console.log("always");
 //   })
+
+//MY WAY
+
+/*
 $("#l1").on("click", function(e) {
   $("li>a")[0].className = "nav-link active";
   $("li>a")[1].className = "nav-link";
@@ -43,4 +47,16 @@ $("#l4").on("click", function(e) {
   $("li>a")[1].className = "nav-link";
   $("li>a")[2].className = "nav-link";
   $("li>a")[3].className = "nav-link active";
+});
+
+*/
+
+//DANILO'S WAY
+
+$("a").on("click", function(e) {
+  e.preventDefault();
+  let x = $(this).attr("href");
+  $(".content").load("data.html ." + x);
+  $("a").removeClass("active");
+  $(this).addClass("active");
 });
